@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTA Store</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<script type="module" src="script.js"></script>
+</head>
+
+<body>
+  <!-- Menu -->
+  <nav class="menu">
+    <ul>
+      <li><a href="#">Sản phẩm</a></li>
+      <li><a href="#">Giới thiệu</a></li>
+      <li><a href="#">Liên hệ</a></li>
+      <li><a href="#">Ngôn ngữ</a></li>
+    </ul>
+  </nav>
+
+    <!-- 2 Card -->
+
+      <div class="container">
+            <h1>Sản phẩm tiêu biểu</h1>
+
+  <div class="card">
+    <div class="content cafe">
+      <h2>Cafe chất</h1>
+        <p class="typewriter">Thơm ngon nguyên chất - Hương vị trường tồn</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="content dauMocChau">
+      <h3>Dâu Mộc Châu</h2>
+        <p class="typewriter">Ăn một trái nhớ cả núi rừng</p>
+    </div>
+  </div>
+  </div>
+
+ <style>
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: clamp(12px, 1.2vw, 16px);
+  font-weight: bold;
+  color: white;
+
+  border-right: 2px solid white;
+  width: 0ch;
+
+  animation: typing 3s steps(40, end) forwards,
+             blink 0.7s step-end infinite;
+}
+
+/* Gõ chữ từng ký tự */
+@keyframes typing {
+  from { width: 0ch; }
+  to   { width: 40ch; }
+}
+
+/* Nhấp nháy con trỏ */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Khi gõ xong, con trỏ biến mất */
+.typewriter.done {
+  border-right: none;
+}
+</style>
+
+<script>
+const typewriters = document.querySelectorAll('.typewriter');
+
+typewriters.forEach(el => {
+  el.addEventListener('animationend', (e) => {
+    if (e.animationName === 'typing') {
+      el.classList.add('done'); // thêm class 'done' cho từng p
+    }
+  });
+});
+</script>
+
+</body>
+</html>
