@@ -135,8 +135,8 @@ h1 {
   letter-spacing: 1px;
  color: rgb(206, 178, 18); /* màu chữ */
 }
-.ST25 h2,
-.NM584 h3 {
+.dauMocChau h2,
+.cafe h3 {
   font-size: clamp(36px, 2.5vw, 30px);  /* co giãn theo màn hình */
   margin: 0;
   letter-spacing: 1px;
