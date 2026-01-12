@@ -12,13 +12,13 @@ body {
   margin: 0;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
-  margin-top: 80px; /* để menu không che card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    margin-top: 40px; /* giảm từ 80px xuống 40px */
 }
 
 /* Menu */
@@ -130,13 +130,14 @@ body {
   width: 100%;
 }
 h1 {
-    font-size: clamp(30px, 2.5vw, 28px);  /* co giãn theo màn hình */
+    font-size: clamp(20px, 2.5vw, 28px);  /* co giãn theo màn hình */
   margin: 0;
   letter-spacing: 1px;
  color: rgb(206, 178, 18); /* màu chữ */
 }
 .dauMocChau h2,
-.cafe h3 {
+.cafe h3,
+.hatdieu h4 {
   font-size: clamp(36px, 2.5vw, 30px);  /* co giãn theo màn hình */
   margin: 0;
   letter-spacing: 1px;
