@@ -11,6 +11,7 @@ body {
   background: linear-gradient(120deg, #012027, #203a43, #2c5364);
   margin: 0;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -24,54 +25,66 @@ body {
 /* Menu */
 .menu {
   width: 100%;
-    position: fixed;   /* luôn trên cùng */
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  padding: 15px 20px;
-
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   display: flex;
-  justify-content: center; /* căn giữa menu */
-    background: rgba(255,255,255,0.05); /* nền mờ nhẹ */
+  justify-content: center;
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
-    overflow: hidden; /* để hiệu ứng không vượt ra ngoài */
-  position: relative; /* cần cho ::before */
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
 }
-/* hiệu ứng ánh sáng */
+/* hiệu ứng light quét */
 .menu::before {
   content: "";
   position: absolute;
-  inset: -50%;  /* phủ ra ngoài menu */
+  inset: -50%;
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255,255,255,0.4),
+    rgba(255,255,255,0.35),
     transparent
   );
   animation: light 6s linear infinite;
+  z-index: 0;   /* QUAN TRỌNG */
 }
+
 .menu ul {
-  list-style: none;
+  position: relative;
   display: flex;
-  gap: 40px;  /* khoảng cách giữa các mục */
-  margin: 0;
+  list-style: none;
   padding: 0;
-    position: relative; /* trên pseudo-element */
-  z-index: 1;         /* để chữ hiện trước ánh sáng */
+  margin: 0;
+}
+
+.menu ul li {
+  position: relative;
 }
 
 .menu ul li a {
-  text-decoration: none;
+  display: block;
+  padding: 15px 30px;
   color: white;
   font-weight: 600;
-  font-size: clamp(16px, 2vw, 22px);
-  transition: color 0.3s;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
 }
 
-.menu ul li a:hover {
-  color: #f1c40f;  /* đổi màu khi hover */
+/* indicator */
+.menu .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #194b4f, #33fffc);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  z-index: 1;
 }
 
 .content {
